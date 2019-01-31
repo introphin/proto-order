@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+// protoc --go_out=plugins=grpc:. *.proto
+
+package order;
+
+message CreateOrderRequest {
+    string uuid = 1;
+    string created_at = 2;
+    int32 type = 3;
+    string visit_uuid = 4;
+    string stream_code = 5;
+    int32 offer_id = 6;
+    int32 user_id = 7;
+    string client_uuid = 8;
+    int32 status = 9;
+    float sum = 10;
+    float payment = 11;
+    string currency = 12;
+    repeated string geo_code = 13;
+    string sub1 = 14;
+    string sub2 = 15;
+    string sub3 = 16;
+    string sub4 = 17;
+    string sub5 = 18;
+    string error_reason = 19;
+    int32 pills = 20;
+}
+
+message Order {
+    string uuid = 1;
+    string created_at = 2;
+    int32 type = 3;
+    string visit_uuid = 4;
+    string stream_code = 5;
+    int32 offer_id = 6;
+    int32 user_id = 7;
+    string client_uuid = 8;
+    int32 status = 9;
+    float sum = 10;
+    float payment = 11;
+    string currency = 12;
+    repeated string geo_code = 13;
+    string sub1 = 14;
+    string sub2 = 15;
+    string sub3 = 16;
+    string sub4 = 17;
+    string sub5 = 18;
+    string error_reason = 19;
+    int32 pills = 20;
+}
+
+service OrderService {
+    rpc CreateOrder (CreateOrderRequest) returns (Order);
+}
