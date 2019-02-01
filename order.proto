@@ -27,6 +27,7 @@ message CreateOrderRequest {
     string sub5 = 18;
     string error_reason = 19;
     int32 pills = 20;
+    string comment = 21;
 }
 
 message Order {
@@ -50,6 +51,7 @@ message Order {
     string sub5 = 18;
     string error_reason = 19;
     int32 pills = 20;
+    string comment = 21;
 }
 
 message ListOrdersRequest {
