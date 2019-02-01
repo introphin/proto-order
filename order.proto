@@ -19,7 +19,7 @@ message CreateOrderRequest {
     float sum = 10;
     float payment = 11;
     string currency = 12;
-    repeated string geo_code = 13;
+    repeated string geo_codes = 13;
     string sub1 = 14;
     string sub2 = 15;
     string sub3 = 16;
@@ -42,7 +42,7 @@ message Order {
     float sum = 10;
     float payment = 11;
     string currency = 12;
-    repeated string geo_code = 13;
+    repeated string geo_codes = 13;
     string sub1 = 14;
     string sub2 = 15;
     string sub3 = 16;
