@@ -6,6 +6,11 @@ import "google/protobuf/timestamp.proto";
 
 package order;
 
+enum PaymentType {
+    PaymentDefault = 0;
+    PaymentHold = 1;
+}
+
 message CreateOrderRequest {
     string uuid = 1;
     google.protobuf.Timestamp created_at = 2;
@@ -81,6 +86,7 @@ message UserPayment {
     int32 user_id = 1;
     string currency = 2;
     float sum = 3;
+    PaymentType type = 4;
 }
 
 message ListUserPaymentsResponse {
