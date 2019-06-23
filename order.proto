@@ -6,6 +6,8 @@ import "google/protobuf/timestamp.proto";
 
 package order;
 
+import "google/protobuf/empty.proto";
+
 enum PaymentType {
     PaymentDefault = 0;
     PaymentHold = 1;
@@ -94,8 +96,16 @@ message ListUserPaymentsResponse {
     int32 total = 2;
 }
 
+message ResetHoldRequest {
+    google.protobuf.Timestamp date_start = 1;
+    google.protobuf.Timestamp date_end = 2;
+    int32 adv_user_id = 3;
+    int32 user_id = 4;
+}
+
 service OrderService {
     rpc ListUserPayments (ListUserPaymentsRequest) returns (ListUserPaymentsResponse);
+    rpc ResetHold (ResetHoldRequest) returns (google.protobuf.Empty);
 
     rpc CreateOrder (CreateOrderRequest) returns (Order);
     rpc ListOrders (ListOrdersRequest) returns (ListOrdersResponse);
